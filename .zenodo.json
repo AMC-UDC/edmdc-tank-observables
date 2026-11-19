@@ -1,0 +1,52 @@
+{
+  "title": "edmdc-tank-observables: observable dictionaries for Koopman-EDMDc identification of a laboratory tank",
+  "upload_type": "software",
+  "description": "Code and results of a comparison of observable dictionaries for the identification of a laboratory-scale tank level system with extended dynamic mode decomposition with control (EDMDc). The repository reproduces every result, table and figure of the paper \"What Does a Physics-Derived Observable Add to Generic EDMDc Dictionaries? A Nested Comparison on a Laboratory Tank\" (CCIA 2026).",
+  "creators": [
+    {
+      "name": "Martí-Coll, Amanda",
+      "affiliation": "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña",
+      "orcid": "0000-0002-3046-2447"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Calvo-Rolle, José Luis",
+      "affiliation": "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña",
+      "type": "Supervisor"
+    },
+    {
+      "name": "Jove, Esteban",
+      "affiliation": "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña",
+      "type": "Supervisor"
+    },
+    {
+      "name": "Michelena, Álvaro",
+      "affiliation": "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña",
+      "type": "Supervisor"
+    },
+    {
+      "name": "Freire-Mahía, Noel",
+      "affiliation": "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña",
+      "type": "ProjectMember"
+    },
+    {
+      "name": "Gómez-González, Pedro-Pablo",
+      "affiliation": "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña",
+      "type": "ProjectMember"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Koopman operator",
+    "EDMDc",
+    "dictionary of observables",
+    "system identification",
+    "tank level"
+  ],
+  "communities": [
+    {
+      "identifier": "ctc_udc"
+    }
+  ]
+}
