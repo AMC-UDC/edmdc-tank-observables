@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the paper listed under
+  preferred-citation.
+title: "edmdc-tank-observables: observable dictionaries for Koopman-EDMDc identification of a laboratory tank"
+type: software
+authors:
+  - family-names: Martí-Coll
+    given-names: Amanda
+    orcid: "https://orcid.org/0000-0002-3046-2447"
+    affiliation: "Research Group CTC, CITIC, Department of Industrial Engineering, University of A Coruña"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/AMC-UDC/edmdc-tank-observables"
+keywords:
+  - Koopman operator
+  - EDMDc
+  - dictionary of observables
+  - system identification
+  - tank level
+preferred-citation:
+  type: conference-paper
+  title: "What Does a Physics-Derived Observable Add to Generic EDMDc Dictionaries? A Nested Comparison on a Laboratory Tank"
+  authors:
+    - family-names: Martí-Coll
+      given-names: Amanda
+    - family-names: Freire-Mahía
+      given-names: Noel
+    - family-names: Gómez-González
+      given-names: Pedro-Pablo
+    - family-names: Michelena
+      given-names: Álvaro
+    - family-names: Jove
+      given-names: Esteban
+    - family-names: Calvo-Rolle
+      given-names: José Luis
+  collection-title: "Advances in Technical Sciences and Architecture: Selected Contributions of the XXII Scientific Convention of Engineering and Architecture, CCIA 2026"
+  conference:
+    name: "XXII Scientific Convention of Engineering and Architecture (CCIA 2026)"
+  publisher:
+    name: Springer
+  year: 2026

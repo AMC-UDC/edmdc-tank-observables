@@ -1,0 +1,24 @@
+# Virtual environment (never versioned)
+.venv*/
+
+# Python caches and build artefacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data: never versioned, see data/README.md
+data/raw/
+data/processed/
+
+# Credentials and local configuration
+.env
+.env.*
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
