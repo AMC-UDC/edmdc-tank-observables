@@ -1,0 +1,16 @@
+% Sources: results/E2_one_step/one_step_pair_counts.csv; results commit 46b8877; script commit 46b8877
+\begin{tabular}{lcc@{\hspace{3\tabcolsep}}cc@{\hspace{3\tabcolsep}}cc}
+\toprule
+ & \multicolumn{2}{c}{One-step} & \multicolumn{2}{c}{Multi-step} & \multicolumn{2}{c}{One-step} \\
+ & \multicolumn{2}{c}{windows} & \multicolumn{2}{c}{windows} & \multicolumn{2}{c}{evaluation segment} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+Comparison & $n_X/n_Y$ & Median $\delta$ & $n_X/n_Y$ & Median $\delta$ & $n_X/n_Y$ & Median $\delta$ \\
+\midrule
+\dSqrt{} vs \dLin & 10/0 & $-$0.055 & 10/0 & $-$1.261 & 10/0 & $-$0.023 \\
+\dDelaySqrt{} vs \dDelay & 10/0 & $-$0.098 & 10/0 & $-$1.467 & 10/0 & $-$0.040 \\
+\dPolySqrt{} vs \dPoly & 2/8 & 0.030 & 1/9 & 0.698 & 5/5 & 0.004 \\
+\dRBFSqrt{} vs \dRBF & 1/9 & 0.018 & 1/9 & 0.429 & 6/4 & $-$0.001 \\
+\dDelay{} vs \dLin & 1/9 & 0.031 & 3/7 & 0.021 & 6/4 & $-$0.002 \\
+\dPoly{} vs \dSqrt & 6/4 & $-$0.006 & 9/1 & $-$0.409 & 3/7 & 0.009 \\
+\bottomrule
+\end{tabular}

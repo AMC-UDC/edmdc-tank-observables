@@ -1,0 +1,25 @@
+% Sources: results/E2_comparisons/paired_tests.csv; results commit 46b8877; script commit 46b8877
+\begin{tabular}{lcccc}
+\toprule
+Comparison & $n_X/n_Y$ & Median $\delta$ [95\% CI] & $p$ sign & $p$ Wilcoxon \\
+\midrule
+\multicolumn{5}{l}{\emph{Curvature term vs \dLin}} \\
+\dPoly{} vs \dLin & 10/0 & $-$1.55 [$-$2.09, $-$1.26] & 0.012 & 0.012 \\
+\dRBF{} vs \dLin & 10/0 & $-$1.43 [$-$1.98, $-$1.08] & 0.012 & 0.012 \\
+\dSqrt{} vs \dLin & 10/0 & $-$1.26 [$-$1.71, $-$0.76] & 0.012 & 0.012 \\
+\dPolySqrt{} vs \dLin & 9/1 & $-$0.65 [$-$1.42, $-$0.18] & 0.043 & 0.037 \\
+\dRBFSqrt{} vs \dLin & 9/1 & $-$0.76 [$-$1.57, $-$0.39] & 0.043 & 0.012 \\
+\dDelaySqrt{} vs \dLin & 10/0 & $-$1.43 [$-$1.71, $-$0.86] & 0.012 & 0.012 \\
+\midrule
+\multicolumn{5}{l}{\emph{Adding $\sqrt{h_k}$}} \\
+\dSqrt{} vs \dLin & 10/0 & $-$1.26 [$-$1.71, $-$0.76] & 0.008 & 0.008 \\
+\dDelaySqrt{} vs \dDelay & 10/0 & $-$1.47 [$-$1.69, $-$0.83] & 0.008 & 0.008 \\
+\dPolySqrt{} vs \dPoly & 1/9 & 0.70 [0.52, 1.57] & 0.043 & 0.012 \\
+\dRBFSqrt{} vs \dRBF & 1/9 & 0.43 [0.37, 1.09] & 0.043 & 0.037 \\
+\midrule
+\multicolumn{5}{l}{\emph{Single comparisons}} \\
+\dDelay{} vs \dLin & 3/7 & 0.02 [$-$0.03, 0.05] & 0.344 & 0.232 \\
+\dPoly{} vs \dSqrt & 9/1 & $-$0.41 [$-$0.51, $-$0.15] & 0.021 & 0.014 \\
+\dDelaySqrt{} vs \dSqrt & 4/6 & 0.05 [$-$0.09, 0.18] & 0.754 & 0.625 \\
+\bottomrule
+\end{tabular}

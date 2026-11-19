@@ -1,0 +1,47 @@
+{
+  "script": "experiments/data_summary.py",
+  "utc_time": "2026-11-19T09:06:36+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "subset": "Baseline",
+    "sampling": "1 Hz raw data; sensor faults removed except for counting them and checking quantization",
+    "sensor_fault_signature": "Level_pct == 0 and Setpoint_pct > 0",
+    "level_recording_step_pct": 0.39215686274509803,
+    "ts_values_s": [
+      1.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "ts_model_s": 5.0,
+    "steps_per_run": 16,
+    "t95_fraction": 0.95,
+    "transient": "[t_change_s, t_change_s + t95_s]",
+    "below_one_step": "|dh| < 1 - 1e-06 recording steps",
+    "samples_per_rise": "t95_s / ts_s, over steps with finite t95_s > 0"
+  },
+  "summary": {
+    "n_runs": 10,
+    "n_steps": 160,
+    "n_sensor_faults": 11,
+    "n_interior_gaps_ts5": 0,
+    "all_levels_on_grid": true,
+    "n_transient_pairs_across_gaps_by_ts": {
+      "1": 0,
+      "2": 0,
+      "5": 0,
+      "10": 0
+    }
+  }
+}

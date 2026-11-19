@@ -1,0 +1,105 @@
+{
+  "script": "experiments/E2_one_step.py",
+  "utc_time": "2026-11-19T09:06:51+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "e2_results": "results/E2_dictionaries",
+    "e2_commit": "46b8877",
+    "models_source": {
+      "coefficients": "results/E2_dictionaries/tables/coefficients.csv",
+      "e2_commit": "46b8877",
+      "read": "pandas.read_csv with float_precision=round_trip",
+      "hyperparameters": "config.hyperparameters of the E2 metadata"
+    },
+    "dictionaries": [
+      "D0",
+      "D1a",
+      "D1b",
+      "D1c",
+      "D2",
+      "D3a",
+      "D3b",
+      "D3c"
+    ],
+    "hyperparameters": {
+      "D1a": {
+        "order": 2
+      },
+      "D1b": {
+        "n_centers": 1
+      },
+      "D1c": {
+        "n_delays": 1
+      },
+      "D3a": {
+        "order": 2
+      },
+      "D3b": {
+        "n_centers": 1
+      },
+      "D3c": {
+        "n_delays": 1
+      }
+    },
+    "horizons_s": [
+      30.0,
+      120.0,
+      600.0
+    ],
+    "segments": {
+      "fit": "every pair of consecutive samples of the fit part (in-sample residual)",
+      "eval_all": "every pair of consecutive samples of the evaluation part",
+      "window": "for each E2 window start i and horizon H steps, the instants i+1..i+H, each predicted from the measured level at the instant before; errors of all windows of a run pooled into one RMSE"
+    },
+    "fit_rows": "fit rows copied from E2 models.csv (rmse = fit_rmse_pct, n_errors = n_pairs); recomputed with predict_step only as a check, rtol 1e-10",
+    "prediction": "lifted state built from the measured level (and measured delays), advanced one step with predict_step",
+    "error_sign": "prediction - measurement, in % of level",
+    "pairs": [
+      [
+        "D2",
+        "D0"
+      ],
+      [
+        "D1a",
+        "D3a"
+      ],
+      [
+        "D1b",
+        "D3b"
+      ],
+      [
+        "D3c",
+        "D1c"
+      ],
+      [
+        "D1c",
+        "D0"
+      ],
+      [
+        "D1a",
+        "D2"
+      ]
+    ],
+    "ties": "exactly equal RMSE, counted apart from both sides",
+    "multistep_source": "tables/errors.csv of the E2 results (column rmse, same horizon)",
+    "checks": [
+      "E2 metadata clean and with config.coefficients_table",
+      "a model for every run and dictionary in tables/coefficients.csv of E2",
+      "in-sample one-step RMSE recomputed with predict_step equals fit_rmse_pct of E2 (rtol 1e-10), and its number of errors equals n_pairs",
+      "window starts equal tables/windows.csv of E2"
+    ],
+    "analysis": "descriptive, no tests"
+  },
+  "summary": {}
+}

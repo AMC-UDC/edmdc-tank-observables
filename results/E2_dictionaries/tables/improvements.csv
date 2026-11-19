@@ -1,0 +1,22 @@
+reference,series,name,horizon_s,n_better,n_compared
+D0,D1a,Polynomial,30.0,10,10
+D0,D1a,Polynomial,120.0,10,10
+D0,D1a,Polynomial,600.0,10,10
+D0,D1b,RBF,30.0,10,10
+D0,D1b,RBF,120.0,10,10
+D0,D1b,RBF,600.0,10,10
+D0,D1c,Delays,30.0,6,10
+D0,D1c,Delays,120.0,3,10
+D0,D1c,Delays,600.0,8,10
+D0,D2,Physical,30.0,10,10
+D0,D2,Physical,120.0,10,10
+D0,D2,Physical,600.0,10,10
+D0,D3a,Polynomial + physical,30.0,9,10
+D0,D3a,Polynomial + physical,120.0,9,10
+D0,D3a,Polynomial + physical,600.0,9,10
+D0,D3b,RBF + physical,30.0,10,10
+D0,D3b,RBF + physical,120.0,9,10
+D0,D3b,RBF + physical,600.0,9,10
+D0,D3c,Delays + physical,30.0,10,10
+D0,D3c,Delays + physical,120.0,10,10
+D0,D3c,Delays + physical,600.0,10,10

@@ -1,0 +1,204 @@
+{
+  "script": "experiments/E1_hyperparameters.py",
+  "utc_time": "2026-11-19T09:06:43+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "subset": "Baseline",
+    "ts_s": 5.0,
+    "train_frac": 0.7,
+    "inner_fit_frac": 0.75,
+    "evaluation_part_used": false,
+    "grids": {
+      "D1a": {
+        "hyperparameter": "order",
+        "values": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "D1b": {
+        "hyperparameter": "n_centers",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "D1c": {
+        "hyperparameter": "n_delays",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "D3a": {
+        "hyperparameter": "order",
+        "values": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "D3b": {
+        "hyperparameter": "n_centers",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "D3c": {
+        "hyperparameter": "n_delays",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    "inherits_from": {
+      "D3a": "D1a",
+      "D3b": "D1b",
+      "D3c": "D1c"
+    },
+    "references": [
+      "D0"
+    ],
+    "horizons_s": [
+      30.0,
+      120.0,
+      600.0
+    ],
+    "selection_horizon_s": 120.0,
+    "aggregation": "median across runs, with minimum and maximum",
+    "selection_rule": "Selected: the candidate with the lowest median RMSE across runs at the selection horizon (exact ties to fewer observables). A selection at the last value of a grid is flagged and not reported as optimal; the first value is the limit of the family. Parsimony is reported as a sensitivity only and does not decide (a heuristic): among the candidates whose median does not exceed the maximum across runs of the selected one, the one with fewest observables.",
+    "window_offset": 0,
+    "runs": [
+      "Baseline_10pct",
+      "Baseline_20pct",
+      "Baseline_30pct",
+      "Baseline_40pct",
+      "Baseline_50pct",
+      "Baseline_60pct",
+      "Baseline_70pct",
+      "Baseline_80pct",
+      "Baseline_90pct",
+      "Baseline_100pct"
+    ]
+  },
+  "summary": {
+    "n_runs": 10,
+    "n_candidates": 44,
+    "selected_hyperparameters": {
+      "D1a": {
+        "order": 2
+      },
+      "D1b": {
+        "n_centers": 1
+      },
+      "D1c": {
+        "n_delays": 1
+      },
+      "D3a": {
+        "order": 2
+      },
+      "D3b": {
+        "n_centers": 1
+      },
+      "D3c": {
+        "n_delays": 1
+      }
+    },
+    "own_selection": {
+      "D1a": {
+        "order": 2
+      },
+      "D1b": {
+        "n_centers": 1
+      },
+      "D1c": {
+        "n_delays": 1
+      },
+      "D3a": {
+        "order": 3
+      },
+      "D3b": {
+        "n_centers": 1
+      },
+      "D3c": {
+        "n_delays": 1
+      }
+    },
+    "parsimony_sensitivity": {
+      "D1a": {
+        "order": 2
+      },
+      "D1b": {
+        "n_centers": 1
+      },
+      "D1c": {
+        "n_delays": 1
+      },
+      "D3a": {
+        "order": 2
+      },
+      "D3b": {
+        "n_centers": 1
+      },
+      "D3c": {
+        "n_delays": 1
+      }
+    },
+    "n_windows_per_run": {
+      "30": [
+        3
+      ],
+      "120": [
+        3
+      ],
+      "600": [
+        3
+      ]
+    },
+    "upper_edge_warnings": []
+  }
+}

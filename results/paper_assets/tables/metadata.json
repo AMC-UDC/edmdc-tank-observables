@@ -1,0 +1,174 @@
+{
+  "script": "experiments/paper_assets.py",
+  "utc_time": "2026-11-19T09:06:57+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "sources": {
+      "table_errors.tex": [
+        "results/E2_dictionaries/tables/fit_indicators.csv",
+        "results/E2_dictionaries/tables/error_summary.csv"
+      ],
+      "table_paired_120s.tex": [
+        "results/E2_comparisons/paired_tests.csv"
+      ],
+      "table_one_step.tex": [
+        "results/E2_one_step/one_step_pair_counts.csv"
+      ]
+    },
+    "results_commits": {
+      "table_errors.tex": "46b8877",
+      "table_paired_120s.tex": "46b8877",
+      "table_one_step.tex": "46b8877"
+    },
+    "dictionaries": [
+      "D0",
+      "D1a",
+      "D1b",
+      "D1c",
+      "D2",
+      "D3a",
+      "D3b",
+      "D3c"
+    ],
+    "macros": {
+      "D0": "\\dLin",
+      "D1a": "\\dPoly",
+      "D1b": "\\dRBF",
+      "D1c": "\\dDelay",
+      "D2": "\\dSqrt",
+      "D3a": "\\dPolySqrt",
+      "D3b": "\\dRBFSqrt",
+      "D3c": "\\dDelaySqrt"
+    },
+    "error_horizons_s": [
+      30.0,
+      120.0,
+      600.0
+    ],
+    "paired_horizon_s": 120.0,
+    "paired_groups": [
+      {
+        "label": "Curvature term vs \\dLin",
+        "holm_family": "curvature_vs_D0",
+        "pairs": [
+          [
+            "D1a",
+            "D0"
+          ],
+          [
+            "D1b",
+            "D0"
+          ],
+          [
+            "D2",
+            "D0"
+          ],
+          [
+            "D3a",
+            "D0"
+          ],
+          [
+            "D3b",
+            "D0"
+          ],
+          [
+            "D3c",
+            "D0"
+          ]
+        ]
+      },
+      {
+        "label": "Adding $\\sqrt{h_k}$",
+        "holm_family": "sqrt_h",
+        "pairs": [
+          [
+            "D2",
+            "D0"
+          ],
+          [
+            "D3c",
+            "D1c"
+          ],
+          [
+            "D3a",
+            "D1a"
+          ],
+          [
+            "D3b",
+            "D1b"
+          ]
+        ]
+      },
+      {
+        "label": "Single comparisons",
+        "holm_family": null,
+        "pairs": [
+          [
+            "D1c",
+            "D0"
+          ],
+          [
+            "D1a",
+            "D2"
+          ],
+          [
+            "D3c",
+            "D2"
+          ]
+        ]
+      }
+    ],
+    "one_step_horizon_s": 120.0,
+    "one_step_pairs": [
+      [
+        "D2",
+        "D0"
+      ],
+      [
+        "D3c",
+        "D1c"
+      ],
+      [
+        "D3a",
+        "D1a"
+      ],
+      [
+        "D3b",
+        "D1b"
+      ],
+      [
+        "D1c",
+        "D0"
+      ],
+      [
+        "D1a",
+        "D2"
+      ]
+    ],
+    "decimals": {
+      "rmse": 2,
+      "fit_rmse": 3,
+      "one_step_differences": 3,
+      "p": 3
+    },
+    "p_floor": 0.001
+  },
+  "summary": {
+    "files": [
+      "table_errors.tex",
+      "table_paired_120s.tex",
+      "table_one_step.tex"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+variant,a,b,n_a_lower,n_b_lower,n_ties,n_runs
+stationary_only,quadratic,linear,9,1,0,10
+stationary_only,sqrt,linear,8,2,0,10
+stationary_only,quadratic,sqrt,6,4,0,10
+all_plateaus,quadratic,linear,10,0,0,10
+all_plateaus,sqrt,linear,10,0,0,10
+all_plateaus,quadratic,sqrt,5,5,0,10

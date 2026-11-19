@@ -1,0 +1,138 @@
+{
+  "script": "experiments/plant_static_curve.py",
+  "utc_time": "2026-11-19T09:06:55+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "subset": "Baseline",
+    "sampling": "1 Hz raw data, sensor faults removed",
+    "level_recording_step_pct": 0.39215686274509803,
+    "window_s": 300,
+    "stationarity_criterion": "|drift_pct| < level_recording_step_pct and |offset_pct| < level_recording_step_pct, with drift_pct = least-squares slope of level against time over the window x window_s",
+    "min_plateaus": 5,
+    "shapes": {
+      "linear": "a + b x",
+      "quadratic": "a + b x + c x²",
+      "sqrt": "a + b x + c √x"
+    },
+    "variants": [
+      "stationary_only",
+      "all_plateaus"
+    ],
+    "main_variant": "stationary_only",
+    "t95_fraction": 0.95,
+    "split_ts_s": 5.0,
+    "train_frac": 0.7,
+    "cut_time_s": 21420.0
+  },
+  "summary": {
+    "n_stationary_plateaus_by_run": {
+      "Baseline_10pct": 15,
+      "Baseline_20pct": 17,
+      "Baseline_30pct": 15,
+      "Baseline_40pct": 14,
+      "Baseline_50pct": 12,
+      "Baseline_60pct": 13,
+      "Baseline_70pct": 11,
+      "Baseline_80pct": 15,
+      "Baseline_90pct": 13,
+      "Baseline_100pct": 15
+    },
+    "n_stationary_plateaus_70_90_by_run": {
+      "Baseline_10pct": 5,
+      "Baseline_20pct": 5,
+      "Baseline_30pct": 4,
+      "Baseline_40pct": 5,
+      "Baseline_50pct": 3,
+      "Baseline_60pct": 3,
+      "Baseline_70pct": 2,
+      "Baseline_80pct": 4,
+      "Baseline_90pct": 3,
+      "Baseline_100pct": 4
+    },
+    "n_stationary_plateaus": 140,
+    "n_plateaus": 170,
+    "pair_counts": [
+      {
+        "variant": "stationary_only",
+        "a": "quadratic",
+        "b": "linear",
+        "n_a_lower": 9,
+        "n_b_lower": 1,
+        "n_ties": 0,
+        "n_runs": 10
+      },
+      {
+        "variant": "stationary_only",
+        "a": "sqrt",
+        "b": "linear",
+        "n_a_lower": 8,
+        "n_b_lower": 2,
+        "n_ties": 0,
+        "n_runs": 10
+      },
+      {
+        "variant": "stationary_only",
+        "a": "quadratic",
+        "b": "sqrt",
+        "n_a_lower": 6,
+        "n_b_lower": 4,
+        "n_ties": 0,
+        "n_runs": 10
+      },
+      {
+        "variant": "all_plateaus",
+        "a": "quadratic",
+        "b": "linear",
+        "n_a_lower": 10,
+        "n_b_lower": 0,
+        "n_ties": 0,
+        "n_runs": 10
+      },
+      {
+        "variant": "all_plateaus",
+        "a": "sqrt",
+        "b": "linear",
+        "n_a_lower": 10,
+        "n_b_lower": 0,
+        "n_ties": 0,
+        "n_runs": 10
+      },
+      {
+        "variant": "all_plateaus",
+        "a": "quadratic",
+        "b": "sqrt",
+        "n_a_lower": 5,
+        "n_b_lower": 5,
+        "n_ties": 0,
+        "n_runs": 10
+      }
+    ],
+    "t95": {
+      "evaluation_steps": {
+        "median_s": 66.5,
+        "min_s": 18.0,
+        "max_s": 110.0,
+        "n": 50,
+        "n_nan": 0
+      },
+      "all_steps": {
+        "median_s": 60.0,
+        "min_s": 0.0,
+        "max_s": 130.0,
+        "n": 160,
+        "n_nan": 0
+      }
+    }
+  }
+}

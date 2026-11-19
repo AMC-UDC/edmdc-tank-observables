@@ -1,0 +1,131 @@
+{
+  "script": "experiments/E2_dictionaries.py",
+  "utc_time": "2026-11-19T09:06:46+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "subset": "Baseline",
+    "ts_s": 5.0,
+    "train_frac": 0.7,
+    "dictionaries": [
+      "D0",
+      "D1a",
+      "D1b",
+      "D1c",
+      "D2",
+      "D3a",
+      "D3b",
+      "D3c"
+    ],
+    "hyperparameters": {
+      "D1a": {
+        "order": 2
+      },
+      "D1b": {
+        "n_centers": 1
+      },
+      "D1c": {
+        "n_delays": 1
+      },
+      "D3a": {
+        "order": 2
+      },
+      "D3b": {
+        "n_centers": 1
+      },
+      "D3c": {
+        "n_delays": 1
+      }
+    },
+    "hyperparameter_source": {
+      "e1_metadata": "results/E1_hyperparameters/metadata.json",
+      "e1_commit": "46b8877",
+      "values": {
+        "order": 2,
+        "n_centers": 1,
+        "n_delays": 1
+      }
+    },
+    "horizons_s": [
+      30.0,
+      120.0,
+      600.0
+    ],
+    "window_offset": 0,
+    "runs": [
+      "Baseline_10pct",
+      "Baseline_20pct",
+      "Baseline_30pct",
+      "Baseline_40pct",
+      "Baseline_50pct",
+      "Baseline_60pct",
+      "Baseline_70pct",
+      "Baseline_80pct",
+      "Baseline_90pct",
+      "Baseline_100pct"
+    ],
+    "figure_run": "Baseline_50pct",
+    "figure_horizon_s": 600.0,
+    "figure_dictionaries": [
+      "D0",
+      "D2"
+    ],
+    "coefficients_table": "tables/coefficients.csv: coefficients of Psi_{k+1} = A Psi_k + B u_k + c in normalized units, one row per element of [A | B | c] of each model. Columns: run, opening_pct, dictionary, output (observable predicted, the row of the matrices), term (regressor it multiplies: an observable name, 'u' or 'const'), coefficient."
+  },
+  "summary": {
+    "n_runs": 10,
+    "n_models": 80,
+    "median_rmse_pct": {
+      "D0": {
+        "30": 1.499026673010031,
+        "120": 3.0673450862780873,
+        "600": 4.357504799884524
+      },
+      "D1a": {
+        "30": 0.8826980871412964,
+        "120": 1.3555615365938443,
+        "600": 1.5848419428898932
+      },
+      "D1b": {
+        "30": 0.9410993309871786,
+        "120": 1.4117401472281847,
+        "600": 1.3689966793545114
+      },
+      "D1c": {
+        "30": 1.5891365331392113,
+        "120": 3.0868925436272,
+        "600": 4.254187240250457
+      },
+      "D2": {
+        "30": 1.009995895202806,
+        "120": 1.708532747746124,
+        "600": 1.7850052625203863
+      },
+      "D3a": {
+        "30": 1.3678921114539513,
+        "120": 2.5524620370734894,
+        "600": 2.2728580648993457
+      },
+      "D3b": {
+        "30": 1.2402271480755762,
+        "120": 2.210182317257602,
+        "600": 2.203354630805454
+      },
+      "D3c": {
+        "30": 0.940429956045253,
+        "120": 1.6748652137198818,
+        "600": 1.7951268351986025
+      }
+    }
+  }
+}

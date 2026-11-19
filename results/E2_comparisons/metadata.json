@@ -1,0 +1,203 @@
+{
+  "script": "experiments/E2_comparisons.py",
+  "utc_time": "2026-11-19T09:06:49+00:00",
+  "git": {
+    "commit": "46b8877",
+    "branch": "main",
+    "clean": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "config": {
+    "e2_results": "results/E2_dictionaries",
+    "e2_commit": "46b8877",
+    "horizons_s": [
+      30.0,
+      120.0,
+      600.0
+    ],
+    "series": [
+      "D0",
+      "D1a",
+      "D1b",
+      "D1c",
+      "D2",
+      "D3a",
+      "D3b",
+      "D3c"
+    ],
+    "references": [
+      "D0"
+    ],
+    "pairs": [
+      [
+        "D1a",
+        "D1b"
+      ],
+      [
+        "D1a",
+        "D2"
+      ],
+      [
+        "D1a",
+        "D3a"
+      ],
+      [
+        "D3c",
+        "D2"
+      ],
+      [
+        "D1b",
+        "D2"
+      ],
+      [
+        "D1b",
+        "D3b"
+      ],
+      [
+        "D1c",
+        "D0"
+      ],
+      [
+        "D3c",
+        "D1c"
+      ],
+      [
+        "D1a",
+        "D0"
+      ],
+      [
+        "D1b",
+        "D0"
+      ],
+      [
+        "D2",
+        "D0"
+      ],
+      [
+        "D3a",
+        "D0"
+      ],
+      [
+        "D3b",
+        "D0"
+      ],
+      [
+        "D3c",
+        "D0"
+      ]
+    ],
+    "difference_pair": [
+      "D1a",
+      "D1b"
+    ],
+    "ties": "exactly equal RMSE, counted apart from both sides",
+    "paired_difference": "rmse_a - rmse_b per run; negative when a is lower",
+    "sign_test": "exact two-sided binomial with p = 0.5, ties left out",
+    "wilcoxon": "two-sided signed-rank, exact distribution (scipy.stats.wilcoxon)",
+    "multiple_comparisons": {
+      "method": "Holm within each family separately, applied to p_sign (p_holm_<family>) and to p_wilcoxon (p_wilcoxon_holm_<family>); p_sign and p_wilcoxon are kept unadjusted",
+      "adjusted_tests": [
+        "p_sign",
+        "p_wilcoxon"
+      ],
+      "horizon_s": 120.0,
+      "members": "unordered pairs, matched to the pairs above in either order",
+      "families": {
+        "curvature_vs_D0": [
+          [
+            "D1a",
+            "D0"
+          ],
+          [
+            "D1b",
+            "D0"
+          ],
+          [
+            "D2",
+            "D0"
+          ],
+          [
+            "D3a",
+            "D0"
+          ],
+          [
+            "D3b",
+            "D0"
+          ],
+          [
+            "D3c",
+            "D0"
+          ]
+        ],
+        "sqrt_h": [
+          [
+            "D2",
+            "D0"
+          ],
+          [
+            "D3c",
+            "D1c"
+          ],
+          [
+            "D1a",
+            "D3a"
+          ],
+          [
+            "D1b",
+            "D3b"
+          ]
+        ]
+      }
+    },
+    "single_tests": {
+      "method": "one comparison each, no adjustment; named in the single_test column",
+      "horizon_s": 120.0,
+      "tests": {
+        "delay": [
+          "D1c",
+          "D0"
+        ],
+        "curvature_choice": [
+          "D1a",
+          "D2"
+        ]
+      }
+    },
+    "bootstrap": "percentile interval of the median and of the mean of d, runs resampled with replacement",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20261024,
+    "confidence": 0.95,
+    "scipy": "1.17.1",
+    "conditioning": {
+      "source": "tables/models.csv of the E2 results",
+      "matrix": "Z = [Psi(h_k), u_k, 1], fit part, normalized units, columns not standardized",
+      "pairs": [
+        [
+          "D0",
+          "D2"
+        ],
+        [
+          "D1c",
+          "D3c"
+        ],
+        [
+          "D1a",
+          "D3a"
+        ],
+        [
+          "D1b",
+          "D3b"
+        ]
+      ],
+      "ratio": "cond(with_sqrt) / cond(base) per run",
+      "check": "median cond per dictionary equals fit_indicators.csv"
+    }
+  },
+  "summary": {}
+}
